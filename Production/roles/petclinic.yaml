@@ -1,0 +1,14 @@
+---
+
+
+
+- hosts: all
+
+  name: Tomcat Setup
+
+  become: yes
+
+  roles:
+
+  - firewall
+  - petclinc

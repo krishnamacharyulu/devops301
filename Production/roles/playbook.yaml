@@ -1,0 +1,39 @@
+---
+
+
+
+- hosts: all
+
+  name: WebServer Setup
+
+  become: yes
+
+  tasks:
+
+  - name: Install Apache2 Packages 
+
+    apt: name=apache2 state=absent
+
+
+
+  - name: Start Apache2 Service
+
+    service: name=apache2 state=stopped
+
+ 
+
+  - name: Disable Firwall 
+
+    service: name=ufw state=stopped enabled=False
+
+
+
+  - name: Deploy Cutsom Web Page
+
+    copy: src=webserver/files/index.html dest=/var/www/html/
+
+
+
+  - name: Deploy Cutsom Web Page
+
+    template: src=templates/info.j2 dest=/var/www/html/info.html

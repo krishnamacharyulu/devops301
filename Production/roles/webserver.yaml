@@ -1,0 +1,13 @@
+---
+
+
+
+- hosts: all
+
+  name: WebServer Setup
+
+  become: yes
+
+  roles:
+
+  - webserver
