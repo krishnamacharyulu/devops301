@@ -40,7 +40,7 @@
 
 - name: Deploy Petclinic War
 
-  copy: src=files/petclinic.war dest={{doc_tomcat}}/tomcat/webapps/
+  copy: src=petclinic/files/petclinic.war dest={{doc_tomcat}}/tomcat/webapps/
 
 
 
